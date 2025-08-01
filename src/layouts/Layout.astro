@@ -1,0 +1,227 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="KRZ DIGISHOP - Premium AI software and VPN solutions for the digital age" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	/* CSS Reset and Global Styles */
+	*, *::before, *::after {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	:root {
+		/* Color Palette */
+		--primary-bg: #1A103C;
+		--secondary-bg: #0A0A0A;
+		--accent-green: #32CD32;
+		--accent-green-hover: #28A228;
+		--text-primary: #FFFFFF;
+		--text-secondary: #B0B0B0;
+		--text-tertiary: #808080;
+		--border-color: #2A2A2A;
+		--card-bg: rgba(255, 255, 255, 0.05);
+		--card-border: rgba(255, 255, 255, 0.1);
+		
+		/* Typography */
+		--font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+		--font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+		
+		/* Spacing */
+		--section-padding: 5rem 0;
+		--container-padding: 0 1.5rem;
+		--max-width: 1200px;
+		
+		/* Effects */
+		--glow-green: 0 0 20px rgba(50, 205, 50, 0.3);
+		--glow-green-intense: 0 0 30px rgba(50, 205, 50, 0.5);
+		--blur-backdrop: blur(10px);
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		font-family: var(--font-primary);
+		background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+		color: var(--text-primary);
+		line-height: 1.6;
+		min-height: 100vh;
+		overflow-x: hidden;
+	}
+
+	/* Typography Classes */
+	.text-primary { color: var(--text-primary); }
+	.text-secondary { color: var(--text-secondary); }
+	.text-tertiary { color: var(--text-tertiary); }
+	.text-accent { color: var(--accent-green); }
+
+	/* Layout Classes */
+	.container {
+		max-width: var(--max-width);
+		margin: 0 auto;
+		padding: var(--container-padding);
+	}
+
+	.section {
+		padding: var(--section-padding);
+	}
+
+	/* Button Styles */
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.875rem 2rem;
+		border: none;
+		border-radius: 8px;
+		font-weight: 600;
+		font-size: 1rem;
+		text-decoration: none;
+		transition: all 0.3s ease;
+		cursor: pointer;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.btn-primary {
+		background: var(--accent-green);
+		color: var(--secondary-bg);
+		box-shadow: var(--glow-green);
+	}
+
+	.btn-primary:hover {
+		background: var(--accent-green-hover);
+		box-shadow: var(--glow-green-intense);
+		transform: translateY(-2px);
+	}
+
+	.btn-secondary {
+		background: transparent;
+		color: var(--text-primary);
+		border: 2px solid var(--card-border);
+	}
+
+	.btn-secondary:hover {
+		border-color: var(--accent-green);
+		color: var(--accent-green);
+		box-shadow: var(--glow-green);
+	}
+
+	/* Card Styles */
+	.card {
+		background: var(--card-bg);
+		border: 1px solid var(--card-border);
+		border-radius: 12px;
+		padding: 2rem;
+		backdrop-filter: var(--blur-backdrop);
+		transition: all 0.3s ease;
+	}
+
+	.card:hover {
+		border-color: var(--accent-green);
+		box-shadow: var(--glow-green);
+		transform: translateY(-4px);
+	}
+
+	/* Utility Classes */
+	.glow-text {
+		text-shadow: 0 0 10px rgba(50, 205, 50, 0.5);
+	}
+
+	.gradient-text {
+		background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-green) 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	/* Animations */
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes glow {
+		0%, 100% {
+			box-shadow: var(--glow-green);
+		}
+		50% {
+			box-shadow: var(--glow-green-intense);
+		}
+	}
+
+	.animate-fade-in-up {
+		animation: fadeInUp 0.6s ease-out;
+	}
+
+	.animate-glow {
+		animation: glow 2s ease-in-out infinite;
+	}
+
+	/* Responsive Design */
+	@media (max-width: 768px) {
+		:root {
+			--section-padding: 3rem 0;
+			--container-padding: 0 1rem;
+		}
+		
+		.btn {
+			padding: 0.75rem 1.5rem;
+			font-size: 0.9rem;
+		}
+		
+		.card {
+			padding: 1.5rem;
+		}
+	}
+
+	/* Scrollbar Styling */
+	::-webkit-scrollbar {
+		width: 8px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: var(--secondary-bg);
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: var(--accent-green);
+		border-radius: 4px;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: var(--accent-green-hover);
+	}
+</style>

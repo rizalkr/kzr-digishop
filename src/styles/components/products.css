@@ -1,0 +1,223 @@
+/* ========================================
+   Products Component Styles
+   ======================================== */
+
+.products {
+	background: radial-gradient(ellipse at center, rgba(50, 205, 50, 0.03) 0%, transparent 50%);
+}
+
+/* Product Categories */
+.product-categories {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	margin-bottom: 3rem;
+	flex-wrap: wrap;
+}
+
+.category-btn {
+	padding: 0.75rem 1.5rem;
+	background: transparent;
+	border: 1px solid var(--card-border);
+	color: var(--text-secondary);
+	border-radius: 8px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	font-weight: 500;
+}
+
+.category-btn:hover,
+.category-btn.active {
+	background: var(--accent-green);
+	color: var(--secondary-bg);
+	border-color: var(--accent-green);
+}
+
+/* Products Grid */
+.products-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	gap: 2rem;
+	margin-bottom: 4rem;
+}
+
+.product-card {
+	position: relative;
+	overflow: hidden;
+	transition: all 0.3s ease;
+}
+
+.product-card::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(135deg, rgba(50, 205, 50, 0.05) 0%, transparent 50%);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.product-card:hover::before {
+	opacity: 1;
+}
+
+.product-image {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 120px;
+	margin-bottom: 1.5rem;
+}
+
+.product-icon {
+	width: 80px;
+	height: 80px;
+	background: rgba(50, 205, 50, 0.1);
+	border: 2px solid rgba(50, 205, 50, 0.3);
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease;
+}
+
+.product-card:hover .product-icon {
+	background: rgba(50, 205, 50, 0.2);
+	border-color: var(--accent-green);
+	box-shadow: var(--glow-green);
+	transform: scale(1.05);
+}
+
+.product-badge {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: var(--accent-green);
+	color: var(--secondary-bg);
+	padding: 0.25rem 0.75rem;
+	border-radius: 0 12px 0 12px;
+	font-size: 0.8rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.product-content {
+	position: relative;
+	z-index: 1;
+}
+
+.product-title {
+	font-family: var(--font-display);
+	font-size: 1.3rem;
+	font-weight: 600;
+	margin-bottom: 1rem;
+	color: var(--text-primary);
+}
+
+.product-description {
+	color: var(--text-secondary);
+	margin-bottom: 1.5rem;
+	line-height: 1.6;
+}
+
+.product-features {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.feature-tag {
+	background: rgba(50, 205, 50, 0.1);
+	color: var(--accent-green);
+	padding: 0.25rem 0.75rem;
+	border-radius: 20px;
+	font-size: 0.8rem;
+	font-weight: 500;
+	border: 1px solid rgba(50, 205, 50, 0.3);
+}
+
+.product-pricing {
+	display: flex;
+	align-items: baseline;
+	gap: 0.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.price {
+	font-family: var(--font-display);
+	font-size: 2rem;
+	font-weight: 700;
+	color: var(--accent-green);
+}
+
+.price-period {
+	color: var(--text-secondary);
+	font-size: 1rem;
+}
+
+.product-btn {
+	width: 100%;
+	justify-content: center;
+}
+
+/* Products CTA */
+.products-cta {
+	text-align: center;
+	background: var(--card-bg);
+	border: 1px solid var(--card-border);
+	border-radius: 16px;
+	padding: 3rem 2rem;
+	backdrop-filter: var(--blur-backdrop);
+}
+
+.products-cta h3 {
+	font-family: var(--font-display);
+	font-size: 1.8rem;
+	font-weight: 600;
+	margin-bottom: 1rem;
+	color: var(--text-primary);
+}
+
+.products-cta p {
+	color: var(--text-secondary);
+	margin-bottom: 2rem;
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.products-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.product-categories {
+		gap: 0.5rem;
+	}
+
+	.category-btn {
+		padding: 0.5rem 1rem;
+		font-size: 0.9rem;
+	}
+
+	.products-cta {
+		padding: 2rem 1rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.product-categories {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.category-btn {
+		width: 200px;
+	}
+}

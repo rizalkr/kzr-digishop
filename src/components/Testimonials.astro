@@ -1,0 +1,321 @@
+---
+// Testimonials Component
+---
+<link rel="stylesheet" href="../styles/components/testimonials.css">
+
+<section id="testimonials" class="testimonials section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">
+                Apa Kata <span class="gradient-text">Pelanggan Pertama Kami</span>
+            </h2>
+            <p class="section-description">
+                Kepercayaan Anda adalah prioritas utama kami. Berikut adalah beberapa pengalaman nyata dari para developer dan profesional yang telah kami layani.
+            </p>
+        </div>
+
+        <div class="testimonials-grid">
+
+            <div class="testimonial-card card animate-fade-in-up">
+                <div class="testimonial-header">
+                    <div class="author-avatar">
+                        <div class="avatar-placeholder">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 21V19A4 4 0 0 0 16 15H8A4 4 0 0 0 4 19V21" stroke="var(--accent-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="12" cy="7" r="4" stroke="var(--accent-green)" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="author-info">
+                        <h4 class="author-name">Andi P.</h4>
+                        <p class="author-title">Backend Developer, Jakarta</p>
+                    </div>
+                    <div class="rating">
+                        <div class="stars">
+                            <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span>
+                        </div>
+                    </div>
+                </div>
+                <blockquote class="testimonial-content">
+                    "Proses aktivasinya beneran cepet dan gampang banget. Kurang dari 5 menit setelah bayar, undangan GitHub Copilot Enterprise udah masuk ke email. Prosesnya resmi via invite, jadi terasa aman. Recommended seller!"
+                </blockquote>
+            </div>
+
+            <div class="testimonial-card card animate-fade-in-up" style="animation-delay: 0.2s;">
+                <div class="testimonial-header">
+                    <div class="author-avatar">
+                        <div class="avatar-placeholder">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 21V19A4 4 0 0 0 16 15H8A4 4 0 0 0 4 19V21" stroke="var(--accent-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="12" cy="7" r="4" stroke="var(--accent-green)" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="author-info">
+                        <h4 class="author-name">Rina S.</h4>
+                        <p class="author-title">Mahasiswi TI, Bandung</p>
+                    </div>
+                    <div class="rating">
+                        <div class="stars">
+                            <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span>
+                        </div>
+                    </div>
+                </div>
+                <blockquote class="testimonial-content">
+                    "Awalnya ragu karena harganya jauh lebih murah dari official store. Tapi setelah tanya-tanya via WA, adminnya ramah dan ngejelasin dengan sabar. ExpressVPN langsung aktif dan aman. Sangat worth it!"
+                </blockquote>
+            </div>
+            
+            </div>
+
+        </div>
+</section>
+<style>
+	.testimonials {
+		background: linear-gradient(180deg, transparent 0%, rgba(50, 205, 50, 0.02) 50%, transparent 100%);
+		position: relative;
+		overflow: hidden;
+	}
+
+	.testimonials::before {
+		content: '';
+		position: absolute;
+		top: 20%;
+		right: -10%;
+		width: 400px;
+		height: 400px;
+		background: radial-gradient(circle, rgba(50, 205, 50, 0.1) 0%, transparent 70%);
+		border-radius: 50%;
+		filter: blur(60px);
+		opacity: 0.6;
+	}
+
+	.testimonials::after {
+		content: '';
+		position: absolute;
+		bottom: 20%;
+		left: -10%;
+		width: 300px;
+		height: 300px;
+		background: radial-gradient(circle, rgba(50, 205, 50, 0.08) 0%, transparent 70%);
+		border-radius: 50%;
+		filter: blur(60px);
+		opacity: 0.6;
+	}
+
+	.testimonials-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 2rem;
+		margin-bottom: 4rem;
+		position: relative;
+		z-index: 1;
+	}
+
+	.testimonial-card {
+		position: relative;
+		transition: all 0.3s ease;
+	}
+
+	.testimonial-card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(135deg, rgba(50, 205, 50, 0.05) 0%, transparent 50%);
+		border-radius: 12px;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+
+	.testimonial-card:hover::before {
+		opacity: 1;
+	}
+
+	.testimonial-header {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.author-avatar {
+		flex-shrink: 0;
+	}
+
+	.avatar-placeholder {
+		width: 60px;
+		height: 60px;
+		background: rgba(50, 205, 50, 0.1);
+		border: 2px solid rgba(50, 205, 50, 0.3);
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.author-info {
+		flex: 1;
+	}
+
+	.author-name {
+		font-family: var(--font-display);
+		font-size: 1.1rem;
+		font-weight: 600;
+		margin-bottom: 0.25rem;
+		color: var(--text-primary);
+	}
+
+	.author-title {
+		color: var(--text-secondary);
+		font-size: 0.9rem;
+	}
+
+	.rating {
+		flex-shrink: 0;
+	}
+
+	.stars {
+		display: flex;
+		gap: 2px;
+	}
+
+	.star {
+		color: rgba(50, 205, 50, 0.3);
+		font-size: 1.2rem;
+		transition: color 0.3s ease;
+	}
+
+	.star.filled {
+		color: var(--accent-green);
+		text-shadow: 0 0 10px rgba(50, 205, 50, 0.5);
+	}
+
+	.testimonial-content {
+		color: var(--text-secondary);
+		line-height: 1.7;
+		font-style: italic;
+		position: relative;
+		font-size: 1.05rem;
+	}
+
+	.testimonial-content::before {
+		content: '"';
+		font-size: 4rem;
+		color: var(--accent-green);
+		opacity: 0.3;
+		position: absolute;
+		top: -1rem;
+		left: -0.5rem;
+		font-family: Georgia, serif;
+		line-height: 1;
+	}
+
+	/* Testimonial Stats */
+	.testimonial-stats {
+		background: var(--card-bg);
+		border: 1px solid var(--card-border);
+		border-radius: 16px;
+		padding: 2rem;
+		backdrop-filter: var(--blur-backdrop);
+		position: relative;
+		z-index: 1;
+	}
+
+	.stats-container {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 2rem;
+		align-items: center;
+	}
+
+	.stat-item {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		text-align: left;
+	}
+
+	.stat-icon {
+		width: 64px;
+		height: 64px;
+		background: rgba(50, 205, 50, 0.1);
+		border: 1px solid rgba(50, 205, 50, 0.3);
+		border-radius: 16px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+	}
+
+	.stat-content {
+		flex: 1;
+	}
+
+	.stat-number {
+		font-family: var(--font-display);
+		font-size: 1.8rem;
+		font-weight: 800;
+		color: var(--accent-green);
+		line-height: 1;
+		margin-bottom: 0.25rem;
+	}
+
+	.stat-label {
+		color: var(--text-secondary);
+		font-weight: 500;
+		font-size: 0.9rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	/* Responsive Design */
+	@media (max-width: 768px) {
+		.testimonials-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.stats-container {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1.5rem;
+		}
+
+		.testimonial-stats {
+			padding: 1.5rem;
+		}
+
+		.stat-item {
+			flex-direction: column;
+			text-align: center;
+			gap: 0.75rem;
+		}
+
+		.stat-icon {
+			width: 48px;
+			height: 48px;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.stats-container {
+			grid-template-columns: 1fr;
+		}
+
+		.testimonial-header {
+			flex-direction: column;
+			text-align: center;
+			gap: 0.75rem;
+		}
+
+		.avatar-placeholder {
+			width: 48px;
+			height: 48px;
+		}
+
+		.testimonial-content::before {
+			display: none;
+		}
+	}
+</style>
