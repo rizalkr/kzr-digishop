@@ -81,3 +81,17 @@ import '../styles/components/hero.css';
         <div class="glow-orb orb-2"></div>
     </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (mobileMenuToggle && navLinks) {
+            mobileMenuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('is-open');
+                mobileMenuToggle.classList.toggle('is-active');
+            });
+        }
+    });
+</script>
